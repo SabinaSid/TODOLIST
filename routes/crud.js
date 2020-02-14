@@ -19,7 +19,7 @@ exports.add=(r,q)=>{
     q.redirect('/');
 }
 exports.update=(r,q)=>{
-    r.body.id=+r,body.id;
+    r.body.id=+r.body.id;
     r.body.status=db.getStatuses(+r.body.status);
     db.updateTask(r.body);
     q.redirect('/');

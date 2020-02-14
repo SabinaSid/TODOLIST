@@ -75,7 +75,7 @@ block content
                              -className=''
 
                         tr(class=className)
-                            td
+                            td #{item.id}
                             td.name.box
                                 span #{item.title}
                             td #{item.startDate}
@@ -83,5 +83,5 @@ block content
                             td #{item.status.name}
                             td
                                 div 
-                                    a.btn.btn-secondary.btn-lg(href="#") &#9998;
-                                    a.btn.btn-secondary.btn-lg(href="#") &#128465;
+                                    a.btn.btn-secondary.btn-lg(href="/get/"+ item.id) &#9998;
+                                    a.btn.btn-secondary.btn-lg(href="/delete/"+ item.id) &#128465;

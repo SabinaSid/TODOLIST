@@ -19,7 +19,7 @@ let db={
     },
     getTasks: id=>{
         if(!id) return tasks;
-        let item=task.filter(x=>x.id==id)[0];
+        let item=tasks.filter(x=>x.id==id)[0];
         return item || null;
     },
     addTask:x=>{
@@ -27,7 +27,7 @@ let db={
         tasks.push(x);
     },
     updateTask: x=>{
-        let item=task.filter(y=>y.id==x.id)[0];
+        let item=tasks.filter(y=>y.id==x.id)[0];
         if(item){
             item.title=x.title;
             item.startDate=x.startDate;
