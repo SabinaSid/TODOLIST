@@ -1,30 +1,28 @@
-class Status{
-    static count=1;
-    constructor(name){
-        this.id=Status.count++;
+class Status {
+    constructor(id, name){
         this.name=name;
+        this.id=id;
     }
 }
-exports.Status;
+exports.Status=Status;
 
-class Task{
-    static count=1;
-    constructor(title,start,end,status){
+class Task {
+    constructor(id, title,start,end,status){
         let dateNow=new Date().toISOString().split('T')[0];
 
         this.title=title || '';
         this.startDate=start || dateNow;
         this.endDate=end || dateNow;
         this.status=status || null;
-        this.id=Task.count++;
+        this.id=id;
     }
 }
-exports.Task;
+exports.Task=Task;
 
-exports.MainViewModel=class{
-    constructor(title,task,statuses,editItem){
+exports.MainViewModel =class {
+    constructor(title, tasks, statuses, editItem){
         this.title=title || '';
-        this.task=task || '';
+        this.tasks=tasks || '';
         this.statuses=statuses || [];
         this.editItem=editItem || null;
     }

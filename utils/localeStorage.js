@@ -1,15 +1,15 @@
 const{Task,Status}=require('../models');
 
 let statuses=[
-    new Status('New'),
-    new Status('In work'),
-    new Status('Complete')
+    new Status(1,'New'),
+    new Status(2,'In work'),
+    new Status(3,'Complete')
 ];
 
 let tasks=[
-    new Task('Title 1',null,null,statuses[0]),
-    new Task('Title 2',null,null,statuses[1]),
-    new Task('Title 3',null,null,statuses[2]),
+    new Task(1,'Title 1',null,null,statuses[0]),
+    new Task(2,'Title 2',null,null,statuses[1]),
+    new Task(3,'Title 3',null,null,statuses[2]),
 ];
 let db={
     getStatuses: id=> {
@@ -23,7 +23,7 @@ let db={
         return item || null;
     },
     addTask:x=>{
-        x.id=Task.count++;
+        x.id= tasks[tasks.length-1].id+1;
         tasks.push(x);
     },
     updateTask: x=>{
