@@ -12,8 +12,10 @@ app.set('view engine','pug');
 app.use(express.static(__dirname+'public'));
 //задаем парсер тела запроса request body
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 app.use('/',routes);
+
 //запуск приложения с прослушивания порта
 app.listen(port,()=>{
-    console.info(`App run on http://localhost:${port}`);
+    console.info(`App run on http://localhost:${port} api run on http://localhost:${port}/api`);
 });
