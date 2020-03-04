@@ -22,9 +22,10 @@ exports.add=(r,q)=>{
         r.body.status=status;
         db.addTask(r.body).then(x=>{
             q.redirect('/');
-            console.log("Пользователь добавил запись {}");
+            
         });
     });
+    console.log("Пользователь добавил запись {}");
 }
 
 exports.update=(r,q)=>{
@@ -33,13 +34,15 @@ exports.update=(r,q)=>{
         r.body.status=x;
         db.updateTask(r.body).then(y=>{
             q.redirect('/');
-            console.log("Пользователь обновил запись {}");
+            
         });
     });
+    console.log("Пользователь обновил запись {}");
 }
 exports.delete=(r,q)=>{
     db.removeTask(+r.params.id).then(x=>{
         q.redirect('/');
-        console.log("Пользователь удалил запись {}");
+        
     });
+    console.log("Пользователь удалил запись {}");
 }
