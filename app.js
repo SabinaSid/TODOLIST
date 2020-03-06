@@ -5,7 +5,7 @@ const routes=require('./routes');
 //создание приложения
 let app=express();
 //установка порта для приложения
-let port=80;
+let port=process.env.PORT || 80;
 //задаем шаблонизатор для представления
 app.set('view engine','pug');
 //задаем директорию со статическими файлами

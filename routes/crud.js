@@ -25,7 +25,7 @@ exports.add=(r,q)=>{
             
         });
     });
-    console.log("Пользователь добавил запись {}");
+    console.log(`Пользователь добавил запись ${r.body}`);
 }
 
 exports.update=(r,q)=>{
@@ -37,12 +37,12 @@ exports.update=(r,q)=>{
             
         });
     });
-    console.log("Пользователь обновил запись {}");
+    console.log(`Пользователь обновил запись ${r.body}`);
 }
 exports.delete=(r,q)=>{
     db.removeTask(+r.params.id).then(x=>{
         q.redirect('/');
         
     });
-    console.log("Пользователь удалил запись {}");
+    console.log(`Пользователь удалил запись ${r.body}`);
 }
